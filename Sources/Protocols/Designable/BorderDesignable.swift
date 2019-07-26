@@ -68,6 +68,7 @@ extension BorderDesignable {
 // MARK: - Layer
 
 extension BorderDesignable {
+  ///移除
   private func clearLayer(in view: UIView) {
     view.layer.borderColor = nil
     view.layer.borderWidth = 0
@@ -75,6 +76,8 @@ extension BorderDesignable {
       .forEach { $0.removeFromSuperlayer() }
   }
 
+  
+  ///设置遮罩
   private func applyBorderOnMask(_ mask: CAShapeLayer, in view: UIView) {
     let borderLayer = CAShapeLayer()
     borderLayer.name = "borderAllSides"

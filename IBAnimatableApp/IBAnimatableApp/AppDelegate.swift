@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+///适配swift语言版本
 /// Swift < 4.2 support
 #if !(swift(>=4.2))
 extension NSAttributedString {

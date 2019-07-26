@@ -18,12 +18,14 @@ open class AnimatableView: UIView, CornerDesignable, FillDesignable, BorderDesig
     }
   }
 
+  ///要切的边
   open var cornerSides: CornerSides  = .allSides {
     didSet {
       configureCornerRadius()
     }
   }
 
+  ///使用字符串设置边
   @IBInspectable var _cornerSides: String? {
     didSet {
       cornerSides = CornerSides(rawValue: _cornerSides)
@@ -31,23 +33,28 @@ open class AnimatableView: UIView, CornerDesignable, FillDesignable, BorderDesig
   }
 
   // MARK: - FillDesignable
+  ///背景色
   @IBInspectable open var fillColor: UIColor? {
     didSet {
       configureFillColor()
     }
   }
 
+  ///背景色
   open var predefinedColor: ColorType? {
     didSet {
       configureFillColor()
     }
   }
+  
+  ///字符串设置背景色
   @IBInspectable var _predefinedColor: String? {
     didSet {
       predefinedColor = ColorType(string: _predefinedColor)
     }
   }
 
+  ///设置透明度
   @IBInspectable open var opacity: CGFloat = CGFloat.nan {
     didSet {
       configureOpacity()
@@ -55,6 +62,7 @@ open class AnimatableView: UIView, CornerDesignable, FillDesignable, BorderDesig
   }
 
   // MARK: - BorderDesignable
+  ///边框类型
   open var borderType: BorderType  = .solid {
     didSet {
       configureBorder()
@@ -79,6 +87,7 @@ open class AnimatableView: UIView, CornerDesignable, FillDesignable, BorderDesig
     }
   }
 
+  ///要设置的边框
   open var borderSides: BorderSides  = .AllSides {
     didSet {
       configureBorder()
@@ -91,6 +100,7 @@ open class AnimatableView: UIView, CornerDesignable, FillDesignable, BorderDesig
     }
   }
   // MARK: - RotationDesignable
+  ///旋转
   @IBInspectable open var rotate: CGFloat = CGFloat.nan {
     didSet {
       configureRotate()

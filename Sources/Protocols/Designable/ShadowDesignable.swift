@@ -136,6 +136,7 @@ extension ShadowDesignable {
     view.layer.superlayer?.insertSublayer(shadowLayer, below: view.layer)
   }
 
+  ///不能切
   private func commonSetup(in view: UIView) {
     // Need to set `layer.masksToBounds` to `false`.
     // If `layer.masksToBounds == true` then shadow doesn't work any more.

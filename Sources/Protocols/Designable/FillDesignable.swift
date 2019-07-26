@@ -70,6 +70,7 @@ extension FillDesignable {
 
     view.alpha = opacity
     // Make better performance
+    ///是否透明
     view.isOpaque = opacity == 1
   }
 

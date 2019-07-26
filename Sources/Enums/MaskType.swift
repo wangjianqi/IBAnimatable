@@ -170,6 +170,8 @@ extension MaskType {
 
 }
 
+
+///结构体
 extension CornerSides {
 
   var rectCorner: UIRectCorner {
@@ -189,6 +191,7 @@ extension CornerSides {
     if self.contains(.bottomRight) {
       corners.insert(.bottomRight)
     }
+    ///返回要切的边
     return corners
   }
 

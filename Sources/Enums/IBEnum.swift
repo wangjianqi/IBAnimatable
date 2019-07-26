@@ -26,6 +26,7 @@ public extension IBEnum {
    - Discussion: the string format is like "enumName(param1,param2,param3)"
    - Returns: A tuple containing the name and an array of parameter string
    */
+  ///字符串处理
   static func extractNameAndParams(from string: String) -> (name: String, params: [String]) {
     let tokens = string.lowercased().components(separatedBy: CharacterSet(charactersIn: "()")).filter { !$0.isEmpty }
     let name = tokens.first ?? ""

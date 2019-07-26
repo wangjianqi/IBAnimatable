@@ -8,6 +8,7 @@
 
 import Foundation
 
+///枚举值
 public enum CornerSide: String {
   case topLeft = "topleft"
   case topRight = "topright"
@@ -29,21 +30,26 @@ public struct CornerSides: OptionSet {
   public static let bottomLeft = CornerSides(rawValue: 1 << 2)
   public static let bottomRight = CornerSides(rawValue: 1 << 3)
 
+  ///所有的边
   public static let allSides: CornerSides = [.topLeft, .topRight, .bottomLeft, .bottomRight]
 
   public init(rawValue: Int) {
     self.rawValue = rawValue
   }
 
+  ///生成边
   init(rawValue: String?) {
     guard let rawValue = rawValue, !rawValue.isEmpty else {
       self = .allSides
       return
     }
 
+    ///分割
     let sideElements = rawValue.lowercased().split(separator: ",")
       .map(String.init)
+      ///去重空格
       .map { CornerSide(rawValue: $0.trimmingCharacters(in: CharacterSet.whitespaces)) }
+      ///生成边
       .map { CornerSides(side: $0) }
 
     guard !sideElements.contains(.unknown) else {

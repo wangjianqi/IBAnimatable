@@ -52,6 +52,7 @@ public extension CornerDesignable where Self: UICollectionViewCell {
 
 extension CornerDesignable {
 
+  ///实现圆角
   func configureCornerRadius(in view: UIView) {
     guard !cornerRadius.isNaN && cornerRadius > 0 else {
       return
@@ -67,6 +68,7 @@ extension CornerDesignable {
       view.layer.cornerRadius = 0.0
       // if a layer mask is specified, remove it
       view.layer.mask?.removeFromSuperlayer()
+      ///设置圆角
       view.layer.mask = cornerSidesLayer(inRect: view.bounds)
     }
   }
